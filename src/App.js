@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import ImageViewer from './ImageViewer'
+import DataViewer from './DataViewer'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = ({
+      customer: [
+        {
+          id: 1,
+          firstname: "Frank",
+          middlename: "Lusabio",
+          lastname: "Arevalo"
+        },
+        {
+          id: 2,
+          firstname: "Jeffrey",
+          middlename: "Duarte",
+          lastname: "Pucaputan"
+        },
+        {
+          id: 3,
+          firstname: "Miki",
+          middlename: "Longakit",
+          lastname: "Terada"
+        }
+      ]
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <ImageViewer />
+        <DataViewer />
+      </div>
+    )
+  }
 }
-
-export default App;
